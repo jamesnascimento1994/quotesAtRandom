@@ -1,0 +1,52 @@
+@import url('https://fonts.googleapis.com/css2?family=Itim&family=New+Tegomin&family=Pangolin&display=swap');
+
+$borderRadius: 5px;
+
+* {
+	padding: 0.5em;
+}
+
+header {
+	border-radius: $borderRadius;
+	font-family: 'New Tegomin', sans-serif;
+}
+
+#quote-box {
+	border-radius: $borderRadius;
+	height: 100%;
+	.button {
+		border: none;
+		border-radius: $borderRadius;
+		color: #fff;
+		background-color: #333;
+		font-family: 'New Tegomin', sans-serif;
+		opacity: 1;
+		&:hover {
+			opacity: 0.8;
+			transition: opacity 0.8s;
+		}
+	}
+	#left-quote {
+		font-size: 2em;
+	}
+
+	#text {
+		text-align: center;
+		font-family: 'Itim', sans-serif;
+	}
+
+	#right-quote {
+		font-size: 2em;
+	}
+
+	.author-div {
+		#author {
+			text-align: center;
+			font-family: 'Pangolin', sans-serif;
+		}
+	}
+
+	.tweet-div {
+		margin: 0 auto;
+	}
+}
