@@ -1,4 +1,3 @@
-const project = 'quotes-at-random';
 
 let quotesData;
 
@@ -76,6 +75,10 @@ function getQuote() {
 		}
 	);
 
+	colorChange();
+}
+
+function colorChange() {
 	let color = Math.floor(Math.random() * colors.length);
 	$('html body').animate(
 		{
@@ -91,6 +94,8 @@ function getQuote() {
 		},
 		1000
 	);
+	$('#footer').css('color', 'black');
+	$('#footer').html(`Copyright&copy${new Date().getFullYear()}&nsbp;James Nascimento`);
 }
 
 $(document).ready(function () {
