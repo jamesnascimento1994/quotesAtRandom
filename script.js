@@ -1,6 +1,8 @@
-
+// create a global variable that will be assigned to a value later in a function
 let quotesData;
 
+// create an array of colors
+// these are the colors that will be used in the color change function
 let colors = [
 	'#2c663e',
 	'#9c4f31',
@@ -16,9 +18,13 @@ let colors = [
 	'#36a6bc',
 ];
 
+// create two more variables that are assigned to an empty string
+// these will represent the quote and its author
 let currentQuote = '',
 	currentAuthor = '';
 
+// this function grabs the quotes and their authors from an API
+// that API is then assigned to quotesData
 function getQuotes() {
 	return $.ajax({
 		headers: {
@@ -36,12 +42,14 @@ function getQuotes() {
 	});
 }
 
+// this function picks an index at random from the quote API
 function getRandomQuote() {
 	return quotesData.quotes[
 		Math.floor(Math.random() * quotesData.quotes.length)
 	];
 }
 
+// this function displays said quote randomly onto the page along with other elements
 function getQuote() {
 	let randomQuote = getRandomQuote();
 	currentQuote = randomQuote.quote;
@@ -52,7 +60,7 @@ function getQuote() {
 		'https://twitter.com/intent/tweet?hashtags=quotes&related=freecodecamp&text=' +
 			encodeURIComponent('"' + currentQuote + '" ' + currentAuthor)
 	);
-
+// makes the previous quote and author fade out while the next code displayed fades in
 	$('#quote-div').animate(
 		{
 			opacity: 0,
@@ -74,10 +82,11 @@ function getQuote() {
 			$('#author').html(randomQuote.author);
 		}
 	);
-
+// the color change function is called here so that way the background changes whenever the new quote button is clicked
 	colorChange();
 }
 
+// this function changes the background color randomly
 function colorChange() {
 	let color = Math.floor(Math.random() * colors.length);
 	$('html body').animate(
