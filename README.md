@@ -6,7 +6,7 @@ Are you bored and want to just click through random quotes by famous people? Wel
 
 https://gist.githubusercontent.com/camperbot/5a022b72e96c4c9585c32bf6a75f62d9/raw/e3c6895ce42069f0ee7e991229064f167fe8ccdc/quotes.json
 
-## App Screenshots
+## App Screenshot
 
 ![QuotesAtRandom](https://user-images.githubusercontent.com/62581000/117523501-bb6ea080-af86-11eb-8697-2fdeb9ecbc27.png)
 
