@@ -1,23 +1,6 @@
 // create a global variable that will be assigned to a value later in a function
 let quotesData;
 
-// create an array of colors
-// these are the colors that will be used in the color change function
-let colors = [
-	'#2c663e',
-	'#9c4f31',
-	'#b37279',
-	'#e3818c',
-	'#e74c3c',
-	'#d0a93a',
-	'#d8d845',
-	'#4f442a',
-	'#570e0d',
-	'#5b3221',
-	'#53c1c4',
-	'#36a6bc',
-];
-
 // create two more variables that are assigned to an empty string
 // these will represent the quote and its author
 let currentQuote = '',
@@ -88,23 +71,27 @@ function getQuote() {
 
 // this function changes the background color randomly
 function colorChange() {
-	let color = Math.floor(Math.random() * colors.length);
-	$('html body').animate(
-		{
-			backgroundColor: colors[color],
-			color: colors[color],
-		},
-		1000
-	);
-	$('header').css('color', 'black');
-	$('.button').animate(
-		{
-			backgroundColor: colors[color],
-		},
-		1000
-	);
-	$('#footer').css('color', 'black');
-	$('#footer').html(`Copyright&copy${new Date().getFullYear()}&nsbp;James Nascimento`);
+	let colors = [`#${(Math.random() * 0xfffff * 1000000).toString(16).slice(0, 6)}`];
+console.log(colors);
+	for (let color in colors) {
+		$('html body').animate(
+			{
+				backgroundColor: colors[color],
+				color: colors[color],
+			},
+			1000
+		);
+		$('header').css('color', 'black');
+		$('.button').animate(
+			{
+				backgroundColor: colors[color],
+			},
+			1000
+		);
+		$('#footer').css('color', 'black');
+		$('#footer').html(`Copyright&copy${new Date().getFullYear()}&nsbp;James Nascimento`);
+
+	}
 }
 
 $(document).ready(function () {
